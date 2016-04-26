@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<link rel="shortcut icon" type="image/png" href="./img/favicon.ico">
+
+		<title>University Housing</title>
+
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+		
+		<script src="./js/jquery-1.8.3.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="base-navbar">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-inner">
+				<div class="container" style="width: auto;">
+					<img class="logo-mini" src="./img/logo.png">
+					<div id="right-nav-options" class="btn-group pull-right">
+						<a class="btn btn-small" href="home.php">Housing</a>
+						<a class="btn btn-small" href="uvpricing.html">Floor Plans</a>
+						<a class="btn btn-small" href="mealPlan.html">Meal Plans</a>
+						<a class="btn btn-small" href="signup.php">Apply Now</a>
+						<a class="btn btn-small" href="faq.html">FAQs</a>
+						<a class="btn btn-small" href="contact.html">Contact US</a>
+						<a class="btn btn-small" href="login.php" >Login</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="base-content">
+	
+	<!-- stuff goes here-->
+	
+			<form id="signnup" name="signup" action="signup_exec.php" method="post" class="form-horizontal">
+						<fieldset>
+							<legend>Basic Information</legend>
+							<div class="control-group">
+								<label class="control-label">First Name</label>
+								<div class="controls">
+									<input type="text" name="firstName" class="input-large" placeholder="First Name">
+								</div>
+							</div>
+							
+							<div class="control-group ">
+								<label class="control-label">Last Name</label>
+								<div class="controls">
+									<input type="text" name="lastName" class="input-large" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Email</label>
+								<div class="controls">
+									<input type="text" name="email" class="input-large" placeholder="username@example.com">
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Password</label>
+								<div class="controls">
+									<input type="password" name="password" class="input-large" placeholder="******************">
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Confirm Password</label>
+								<div class="controls">
+									<input type="cpassword" name="cpassword" class="input-large" placeholder="******************">
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Date of Birth</label>
+								<div class="controls">
+									<input type="date" name="dob" class="input-large" >
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Gender</label>
+								<div class="controls">
+								<label class="radio">
+										<input type="radio" name="gender" id="" value="male"> Male
+								</label>
+								<label class="radio">
+										<input type="radio" name="gender" id="" value="female"> Female
+								</label>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Contact Information</legend>
+							<div class="control-group ">
+								<label class="control-label">Address</label>
+								<div class="controls">
+									<textarea name="address" class="input-large" rows="3" placeholder="Street Name, Apt #, City, State-Zip"></textarea>
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Phone</label>
+								<div class="controls">
+									<input type="text" name="phone" class="input-large" placeholder="###-###-####">
+								</div>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Preference</legend>
+							<div class="control-group ">
+								<label class="control-label">Bedrooms</label>
+								<div class="controls">
+								<label class="radio">
+										<input type="radio" name="no" id="" value="1"> One
+								</label>
+								<label class="radio">
+										<input type="radio" name="no" id="" value="2"> Two
+								</label>
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Bedroom Type</label>
+								<div class="controls">
+								<label class="radio">
+										<input type="radio" name="type" id="" value="shared"> Shared
+								</label>
+								<label class="radio">
+										<input type="radio" name="type" id="" value="private"> Private
+								</label>
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Floor Plans</label>
+								<div class="controls">
+								<select name="floorplans">
+								  <option>A1</option>
+								  <option>A2</option>
+								  <option>A3</option>
+								  <option>A4</option>
+								  <option>A5</option>
+								  <option>A6</option>
+								  <option>A7</option>
+								  <option>A8</option>
+								  <option>B1</option>
+								  <option>B2</option>
+								  <option>B3</option>
+								  <option>B4</option>
+								  <option>B5</option>
+								  <option>B6</option>
+								  <option>B7</option>
+								  <option>B8</option>
+								</select>
+								</div>
+							</div>
+							<div class="control-group ">
+								<label class="control-label">Meal Plans</label>
+								<div class="controls">
+								<select name="mealplan">
+								  <option>Meal-19</option>
+								  <option>Meal-14</option>
+								  <option>Meal-10</option>
+								  <option>Meal-5</option>
+								  <option>Meal-Money</option>
+								</select>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<div class="controls">
+									<button type="submit" class="btn btn-success">Submit</button>
+									<button type="reset" class="btn">Reset</button>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<div class="controls">
+									</div>
+							</div>
+						</fieldset>
+						
+					</form>
+		
+	
+	</div>
+	<div class="base-footer">
+		<h6>
+			Copyright © <span id="currentYear">2015 </span>	
+			University Housing
+		</h6>
+	</div>
+</body>
+</html>

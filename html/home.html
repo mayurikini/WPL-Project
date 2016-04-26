@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<link rel="shortcut icon" type="image/png" href="./img/favicon.ico">
+
+		<title>University Housing</title>
+
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+		<link rel="stylesheet" type="text/css" href="./css/slideshow.css">
+		
+		<script src="./js/jquery-1.8.3.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+
+		<style>
+			div.features {
+			  width: 417px;
+			  border-radius: 20px;
+			}
+			div.features h2{
+				color: #006dcc;
+			}
+			button.apply-now{
+				  position: relative;
+				  top: 500px;
+				  left: 753px;
+				    width: 250px;
+					height: 80px;
+					font-size: 36px;
+			}
+			div.page-header h1{
+				text-align: center;
+			}
+		</style>
+		</head>
+<body>
+	<div class="base-navbar">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-inner">
+				<div class="container" style="width: auto;">
+					<img class="logo-mini" src="./img/logo.png">
+					<div id="right-nav-options" class="btn-group pull-right">
+						<?php 
+						session_start();
+						//$_SESSION['SESS_USER_NAME'] = $username;
+						$username=$_SESSION['SESS_USER_NAME'];
+						//echo '$username';
+						if(isset($_SESSION['SESS_USER_NAME']) && strcmp($username,'ADMIN') != 0) {
+						echo"<a class='btn btn-small' href='userHome.php'>Profile</a>";
+						}
+						if(isset($_SESSION['SESS_USER_NAME']) && strcmp($username,'ADMIN') == 0 ) {
+						echo"<a class='btn btn-small' href='adminhome.php'>Home</a>";
+						}
+						echo"<a class='btn btn-small' href='home.php'>Housing</a>";
+						if(isset($_SESSION['SESS_USER_NAME'])){
+						echo"<a class='btn btn-small' href='appView.php'>Availability</a>";
+						}
+						if(!isset($_SESSION['SESS_USER_NAME'])){
+						echo"<a class='btn btn-small' href='signup.php'>Apply Now</a>";
+						}
+						echo"<a class='btn btn-small' href='uvpricing.html'>Floor Plans</a>
+						<a class='btn btn-small' href='mealPlan'>Meal Plans</a>
+						<a class='btn btn-small' href='faq.html'>FAQs</a>
+						<a class='btn btn-small' href='contact.html'>Contact US</a>";
+						if(isset($_SESSION['SESS_USER_NAME'])){
+							echo '<a class="btn btn-small" href="logout.php" >Logout</a>';
+						}
+						else{
+							echo '<a class="btn btn-small" href="login.php" >Login</a>';
+						}
+						
+						?>
+		<ul class="nav pull-right" style="margin: 0px;">
+							<li class="dropdown" id="menu1">
+								<a class="btn btn-small dropdown-toggle" role="button" data-toggle="dropdown" href="" style="height:5px; width:5px;"> <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a tabindex="-1" style="font-size: 12px;" href="">Change Password</a></li>
+									<li class="divider"></li>
+									<li><a tabindex="-1" style="font-size: 12px;" href="">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="base-content">
+		<div class="page-header">
+	    <h1>University Housing</h1> 
+<h1>		<small>offer students a variety of <a href="/housing/uvpricing/">floor plans</a> and the comfort of home within walking distance to class.</small>
+	</h1>
+		</div>
+		<div class="slideshow">
+          <img class="img-polaroid" src="img/uv-side.jpg">
+          <img class="img-polaroid" src="img/uv-students.jpg">
+          <img class="img-polaroid" src="img/uv-dog.jpg">
+          <img class="img-polaroid" src="img/uv-pool.jpg">
+          <img class="img-polaroid" src="img/uv-basketball.jpg">
+		  <img class="img-polaroid" src="img/uv-laundry.jpg">
+        </div>
+	  <script src="js/jquery-1.11.2.min.js"></script>
+      <script src="js/slideshow.js"></script>
+	  <button class="btn btn-primary btn-large apply-now">Apply NOW!</button>
+	  <div class="well features">
+		<h2>University Housing Features</h2>
+		<ul>
+            <li>Refrigerator/freezer with ice maker</li>
+            <li>Dishwasher</li>
+            <li>Electric stove/oven</li>
+            <li>Garbage disposal</li>
+            <li>Microwave*</li>
+            <li>Cable, internet jacks in each unit</li>
+            <li>Plush carpeting</li>
+            <li>Mini blinds</li>
+            <li>Washer/dryer*</li>
+            <li>Central heat/air conditioning</li>
+            <li>Vinyl floors (kitchen/bathroom)</li>
+        </ul>
+	  </div>
+		<div class="well features">	  
+			   <h2>Meal Plans</h2>
+			   <p>Students may choose to purchase one of a variety of optional meal plans.</p>
+		</div>
+		<div class="well features" style="width:96%;">	  
+		  <h2>Community Amenities</h2>
+		  <p>University Village  includes the following:</p>
+		  <ul>
+			<li>Peer advisors</li>
+			<li>Study centers, meeting rooms and lounges</li>
+			<li>Outdoor grills</li>
+			<li>Swimming pools</li>
+			<li>Sand volleyball courts</li>
+			<li>Outdoor basketball and tennis courts</li>
+			<li>Billiards and ping-pong tables</li>
+			<li>Landscaped and maintained grounds</li>
+			<li>Picnic areas</li>
+			<li>Bicycle racks and repair stands</li>
+			<li>On-site maintenance staff</li>
+			<li>Mailbox stations</li>
+			<li>24-hour campus police patrol</li>
+			<li>24-hour lockout service</li>
+			<li>Emergency call stations</li>
+		  </ul>
+		<p>Apartments feature Internet and extended basic cable service. This amenity is included in the rental rate.</p>
+		<p>Apartment residents may choose to sign up for alternative cable or Internet service with an outside vendor instead of using the provided network, but students are responsible for setting up and paying for these services.</p>
+		</div>
+	</div>
+	<div class="base-footer">
+		<h6>
+			Copyright © <span id="currentYear">2015 </span>	
+			University Housing
+		</h6>
+	</div>
+</body>
+</html>

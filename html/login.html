@@ -1,0 +1,166 @@
+<?php
+	//Start session
+	session_start();	
+	//Unset the variables stored in session
+	unset($_SESSION['SESS_USER_ID']);
+	unset($_SESSION['SESS_FIRST_NAME']);
+	unset($_SESSION['SESS_LAST_NAME']);
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		
+		<link rel="shortcut icon" type="image/png" href="./img/favicon.ico">
+		
+		<title>University Housing</title>
+		
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/base.css">
+		
+		<script src="./js/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+			div.base-home-header {
+				height: 20px;
+				background-color: rgb(0, 127, 190);
+			}
+
+			div.base-home-footer {
+				height: 30px;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				background-color: rgb(0, 127, 190);
+				color: white;
+			}
+
+			div.base-home-footer h6 {
+				line-height: 15px;
+				margin-left: 15px;
+			}
+
+			body {
+				height: 100%;
+				margin-bottom: 30px;
+			}
+
+			div.dead-center {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+
+			div.sign-in-wrapper {
+				width: 485px;
+				height: 335px;
+			}
+
+			div.sign-in-wrapper {
+				border: 2 px solid rgb(0, 127, 190);
+				box-shadow: 9px 12px 31px rgb(51, 51, 51);
+				-webkit-box-shadow: 9px 12px 31px rgb(51, 51, 51);
+				-moz-box-shadow: 9px 12px 31px #333333;
+				border-radius: 20px;
+			}
+
+			div.sign-in-form {
+				width: 450px;
+				height: 300px;
+				border-radius: 14px;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="base-navbar">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-inner">
+				<div class="container" style="width: auto;">
+					<img class="logo-mini" src="./img/logo.png">
+					<div id="right-nav-options" class="btn-group pull-right">
+						<a class="btn btn-small" href="home.php">Housing</a>
+						<a class="btn btn-small" href="uvpricing.html">Floor Plans</a>
+						<a class="btn btn-small" href="mealPlan.html">Meal Plans</a>
+						<a class="btn btn-small" href="signup.php">Apply Now</a>
+						<a class="btn btn-small" href="faq.html">FAQs</a>
+						<a class="btn btn-small" href="contact.html">Contact US</a>
+						<a class="btn btn-small" href="login.php" >Login</a>
+						<ul class="nav pull-right" style="margin: 0px;">
+							<li class="dropdown" id="menu1">
+								<a class="btn btn-small dropdown-toggle" role="button" data-toggle="dropdown" href="" style="height:5px; width:5px;"> <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a tabindex="-1" style="font-size: 12px;" href="">Change Password</a></li>
+									<li class="divider"></li>
+									<li><a tabindex="-1" style="font-size: 12px;" href="">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+		<div class="logo blue-gradient clearfix base-home-header" style="padding: 10px;">
+			<img class="pull-left" src="./img/logoWhite.png" alt="" style="width: 50px"> <img class="pull-right" src="./img/icon-uv-white.png" alt="" style="width: 80px">
+		</div>
+		<div class="base-content-wrapper">
+			<div class="sign-in-wrapper dead-center ">
+				<div class="well well-small sign-in-form dead-center ">
+					<form id="doLogin" name="doLogin" action="login_exec.php" method="post" class="form-horizontal">
+						<fieldset>
+						<!--the code bellow is used to display the message of the input validation-->
+							<?php
+							if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
+							echo '<ul class="err">';
+							foreach($_SESSION['ERRMSG_ARR'] as $msg) {
+							echo '<li>',$msg,'</li>'; 
+							}
+							echo '</ul>';
+							unset($_SESSION['ERRMSG_ARR']);
+							}
+							?>
+
+							<legend>Sign in</legend>
+							<div class="control-group">
+								<label class="control-label">User Name</label>
+								<div class="controls">
+									<input type="text" name="username" value="" id="" class="input-large" placeholder="username">
+								</div>
+							</div>
+							
+							<div class="control-group ">
+								<label class="control-label">Password</label>
+								<div class="controls">
+									<input type="password" name="password" id="" class="input-large" placeholder="Password">
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button type="submit" class="btn">Sign in</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>		
+		<div class="base-home-footer">
+			<script type="text/javascript">
+				$(document).ready(function(){
+					var  cYear = new Date().getFullYear();
+					$('span#currentYear').html(cYear);
+				});
+			</script>
+			<h6>
+				Copyright © <span id="currentYear">2015 </span>	
+				University Housing
+			</h6>
+		</div>
+	</body>
+</html>

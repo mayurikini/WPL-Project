@@ -1,0 +1,15 @@
+.slideshow {
+	position: relative;
+}
+
+.slideshow img {
+	position: absolute;
+	top: 76px;
+	left: 466px;
+	height: 350px;
+	border: gray 3px solid;
+}
+
+
+
+
